@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista Dinámica de Productos de la tienda de EDUIS GALEAS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a4a4a;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #f4f6ff;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 6px solid #667eea;
+        }
+
+        li h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        li p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .precio {
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            font-size: 16px;
+            background-color: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #5a6fdc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lista de Productos</h1>
+
+        <ul id="listaProductos"></ul>
+
+        <button id="btnAgregar">Agregar nuevo producto</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
