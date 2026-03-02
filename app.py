@@ -1,18 +1,26 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 
-@app.route('/')
+productos = []
+
+@app.route("/")
 def inicio():
-    return "Eduardo Galeas Bienvenido al Sistema de ventas – Víveres y Carnes S.A."
+    return render_template("index.html", productos=productos)
 
-@app.route('/producto/<nombre>')
-def producto(nombre):
-    return f"Producto: {nombre} - Si hay en el inventario."
+@app.route("/agregar", methods=["POST"])
+def agregar():
+    nombre = request.form["nombre"]
+    precio = request.form["precio"]
+    cantidad = request.form["cantidad"]
 
-@app.route('/cliente/<nombre>')
-def cliente(nombre):
-    return f"Bienvenido {nombre}, El pedido está en proceso."
+    productos.append({
+        "nombre": nombre,
+        "precio": precio,
+        "cantidad": cantidad
+    })
 
-if __name__ == '__main__':
+    return redirect("/")
+
+if __name__ == "__main__":
     app.run(debug=True)
