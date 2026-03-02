@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Buscar Productos</h2>
+<form method="GET" action="/buscar">
+    <input type="text" name="nombre" placeholder="Nombre del producto">
+    <button type="submit">Buscar</button>
+</form>
+
+{% if resultados %}
+    <h3>Resultados:</h3>
+    <ul>
+    {% for p in resultados %}
+        <li>{{ p.nombre }} - Cant: {{ p.cantidad }} - Precio: {{ p.precio }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}
